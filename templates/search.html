@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Search{% endblock title %}
+{% block style %}
+<style>
+    h3#headings {
+        color: #333;
+        text-align: center;
+        position: relative;
+        margin: 1% 0% 5%;
+        font-family: 'Combo', cursive;
+    }
+    h3#headings::after {
+        content: "";
+        width: 5rem;
+        position: absolute;
+        margin: 0% auto;
+        height: 9%;
+        background: #ffdc12;
+        left: 0%;
+        right: 0%;
+        bottom: -20%;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+
+<div class="container mb-3 py-4">
+
+    <!-- Message Starts -->
+    {% if messages %}
+        {% for message in messages %}
+            <div class="container">
+            <div class="alert alert-info alert-dismissable mx-4 px-4">
+                {{message}}
+                <a href="{% url 'categories' %}">View all products</a>
+                <button type="button" class="close" data-bs-dismiss="alert" aria-hidden="true" onclick="this.parentNode.remove(); return false;" style="position: absolute; right: 2%;">&times;
+                </button>
+            </div>
+            </div>
+        {% endfor %}
+    {% endif %}
+    <!-- Message Ends -->
+
+    <!-- search for products cards starts -->
+    <div class="container">
+        <div class="container py-3">
+            <h3 id="headings" align="center">----- Your search <span style="color: blue;">Results</span> -----</h3>
+        </div>
+        <!-- No results section starts -->
+        {% if query|length < 1 or query|length > 78  %} 
+        <div class="container">
+            <p>
+                Your search - <b>{{query}}</b> - did not match any documents.
+                Suggestions:
+            <ul>
+                <li>Make sure that all words are spelled correctly.</li>
+                <li>Try different keywords.</li>
+                <li>Try more general keywords.</li>
+                <li>Try fewer keywords.</li>
+            </ul>
+            </p>
+        </div>
+        {% endif %}
+        <!-- No results section ends -->
+
+    <!-- categories cards starts -->
+    <section class="py-0">
+        {% if result_catg %}
+        <div class="container pt-0 pb-4 px-4"
+            style="box-shadow: 4px 4px 10px lightgray; background-color: rgb(252, 252, 252); border-radius: 5px;">
+            <div style="text-align: center;" class="container my-2 pt-2">
+                <h3 id="headings" align="center"> Categories <span style="color: blue;">Available</span> </h3><br>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for x in result_catg %}
+                <div class="col pb-4">
+                    <div class="card shadow-sm">
+                        <img class="card-img-top" src="{{x.img.url}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 align="center" class="card-title">{{ x.title }}</h5>
+                            <p class="card-text">
+                                {{ x.desc }}
+                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatum minus
+                                officia veritatis quos rerum eos iste reprehenderit id! Saepe.</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    <!-- categories cards ends -->
+        <br>
+        <br>
+    </section>
+</div>
+<!-- search for products cards ends -->
+</div>
+
+{% endblock body %}

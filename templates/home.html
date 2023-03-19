@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block style %}
+<style>
+/* Testimonials Starts */
+    h3#headings_main {
+	color: #333;
+	text-align: center;
+	position: relative;
+	margin: 1% 0% 5%;
+}
+h3#headings_main::after {
+	content: "";
+	width: 20rem;
+	position: absolute;
+	margin: 0% auto;
+	height: 9%;
+	background: #ffdc12;
+	left: 0%;
+	right: 0%;
+	bottom: -28%;
+}
+    h3#headings {
+	color: #333;
+	text-align: center;
+	position: relative;
+	margin: 1% 0% 5%;
+}
+h3#headings::after {
+	content: "";
+	width: 5rem;
+	position: absolute;
+	margin: 0% auto;
+	height: 9%;
+	background: #ffdc12;
+	left: 0%;
+	right: 0%;
+	bottom: -20%;
+}
+    h3#testi {
+	color: #333;
+	text-align: center;
+	position: relative;
+	margin: 1% 0% 5%;
+}
+h3#testi::after {
+	content: "";
+	width: 5rem;
+	position: absolute;
+	margin: 0% auto;
+	height: 9%;
+	background: #ffdc12;
+	left: 0%;
+	right: 0%;
+	bottom: -20%;
+}
+.carousel {
+	width: 650px;
+	margin: 0 auto;
+	padding-bottom: 50px;
+}
+.carousel .carousel-item {
+	color: #999;
+	font-size: 14px;
+	text-align: center;
+	overflow: hidden;
+	min-height: 340px;
+}
+.carousel .carousel-item a {
+	color: #eb7245;
+}
+.carousel .img-box {
+	width: 145px;
+	height: 145px;
+	margin: 0 auto;
+	border-radius: 50%;
+}
+.carousel .img-box img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border-radius: 50%;
+}
+.carousel .testimonial {	
+	padding: 30px 0 10px;
+}
+.carousel .overview {	
+	text-align: center;
+	padding-bottom: 5px;
+}
+.carousel .overview b {
+	color: #333;
+	font-size: 15px;
+	text-transform: uppercase;
+	display: block;	
+	padding-bottom: 5px;
+}
+.carousel .star-rating i {
+	font-size: 18px;
+	color: #ffdc12;
+}
+.carousel-control-prev, .carousel-control-next {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #999;
+	text-shadow: none;
+	top: 4px;
+}
+.carousel-control-prev i, .carousel-control-next i {
+	font-size: 20px;
+	margin-right: 2px;
+}
+.carousel-control-prev {
+	left: auto;
+	right: 40px;
+}
+.carousel-control-next i {
+	margin-right: -2px;
+}
+.carousel .carousel-indicators {
+	bottom: 15px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 11px;
+	height: 11px;
+	margin: 1px 5px;
+	border-radius: 50%;
+}
+.carousel-indicators li {	
+	background: #e2e2e2;
+	border: none;
+}
+.carousel-indicators li.active {		
+	background: #888;		
+}
+</style>
+<!-- testimonials scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- carousel scripts -->
+<link rel="stylesheet" type="text/css" href="{% static '/home/carousel/carousel.css' %}">
+<script src="{% static '/home/carousel/carousel.js' %}"></script>
+{% endblock style %}
+
+
+{% block body %}
+<div class="container mb-3 pb-4">
+<br>
+<br>
+<!-- Welcoming Text Starts -->
+  <div class="mb-3 py-0">
+    <h3 id="headings_main" class="text-center" style="font-family: 'Combo', cursive;">Welcome! Get all products <span style="color: blue;">under one platform.</span><h3>
+  </div>
+<!-- Welcoming Text Ends -->
+
+<!-- Welcoming carousel starts -->
+<div class="container">
+    <!-- Flickity HTML init -->
+<div class="gallery js-flickity" style="padding-top: 0%;" data-flickity-options='{ "wrapAround": true }'>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Pullover.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Shoes.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/shirt.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Trouser.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Jeans.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/TShirt.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Jacket.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Skirt.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="{% static '/home/Socks.jpg' %}" height="250rem" width="400rem" alt="...">
+</div>
+<!-- <div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="/static/1st/d.jpg" height="400rem" width="900rem" alt="...">
+</div>
+<div class="gallery-cell" style="padding-left: 25%; padding-right: 25%;">
+    <img src="/static/1st/f.jpg" height="400rem" width="900rem" alt="...">
+  </div> -->
+</div>
+</div>
+<!-- Welcoming carousel ends -->
+  
+<br>
+<br>
+<br>
+
+<!-- Upload Section Starts -->
+<div class="row" style="padding: 2% 2%; background-color: rgb(251, 251, 251);">
+    <div class="row row-cols-md-2 row-cols-1 text-center justify-content-center px-xl-6 aos-init aos-animate" data-aos="fade-up">
+        <div class="col my-3" style="padding-right: 4%;">
+            <div class="card border-hover-primary hover-scale" style="border: 0;">
+                <div class="card-body">
+                    <div class="text-primary mb-5">
+                        <p class="fst-italic"><h3 id="headings" style="font-family: 'Combo', cursive;">Upload Your <span style="color: blue;">Custom Picture</span></h3> <br>
+                            <form method = "post" enctype="multipart/form-data" action="{% url 'cloth_classifier/' %}">
+                                {% csrf_token %}
+                                <div style="display: flex; flex-direction: row;">
+                                    <input class="form-control me-2" style="height: 2.6rem; width: 15rem;" type="file" placeholder="Search With Image" aria-label="Search With Image" name="upload" id="upload">
+                                    <button class="btn btn-success" style="height: 2.6rem; width: 10rem;"  type="submit"><i class="fa fa-fw fa-search"></i>Upload</button>
+                                </div>
+                            </form>
+                        </p> 
+                    </div>
+                    <h6 class="font-weight-bold mb-3">Upload image of your requirements and get personalized experienced with our tool!</h6>
+                </div>
+            </div> 
+        </div>
+        <div class="col my-3" style="padding-right: 4%;">
+            <div class="card border-hover-primary hover-scale" style="border: 0;">
+                <div class="card-body">
+                    <div class="text-primary mb-5">
+                        <p class="fst-italic"><h3 id="headings" style="font-family: 'Combo', cursive;">Our Predicted <span style="color: blue;">Image</span></h3>
+                            <br>
+                        </p> 
+                    </div>
+                    <h6 class="font-weight-bold mb-3">Dummy Text</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Upload Section Ends -->
+
+<br>
+<br>
+<br>
+
+<!-- Mission section starts -->
+<div class="row" style="padding: 2% 2%; background-color: rgb(251, 251, 251);">
+    <div></div>
+    <div class="row row-cols-md-2 row-cols-1 text-center justify-content-center px-xl-6 aos-init aos-animate" data-aos="fade-up">
+        <div class="col my-3" style="padding-right: 4%;">
+            <div class="card border-hover-primary hover-scale" style="border: 0;">
+                <div class="card-body">
+                    <div class="text-primary mb-5">
+                        <p class="fst-italic"><h3 id="headings" style="font-family: 'Combo', cursive;">Our <span style="color: blue;">Vision</span></h3>
+                            <img src="{% static '/home/vision2.png' %}" height="100rem" alt="...">
+                        </p> 
+                    </div>
+                    <h6 class="font-weight-bold mb-3">Dummy Text</h6>
+                    <div  style="text-align: left;"><p class="text-muted mb-0">
+                        <ul>
+                            <li>
+                                <i class="bi bi-check2-all"></i>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-all"></i>
+                                Duis aute irure dolor in reprehenderit in voluptate velit.
+                            </li>
+                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                                nulla pariatur.</li>
+                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                                nulla pariatur.</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </div>
+        </div>
+        <div class="col my-3" style="padding-left: 4%;">
+            <div class="card border-hover-primary hover-scale" style="border: 0;">
+                <div class="card-body">
+                    <div class="text-primary mb-5">
+                        <p class="fst-italic"><h3 id="headings" style="font-family: 'Combo', cursive;">Our <span style="color: blue;">Mission</span></h3>
+                            <img src="{% static '/home/mission.png' %}" height="100rem" alt="...">
+                        </p>
+                    </div>
+                    <h6 class="font-weight-bold mb-3">Dummy Text</h6>
+                    <div  style="text-align: left;"><p class="text-muted mb-0">
+                        <ul>
+                            <li>
+                                <i class="bi bi-check2-all"></i>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </li>
+                            <li>
+                                <i class="bi bi-check2-all"></i>
+                                Duis aute irure dolor in reprehenderit in voluptate velit.
+                            </li>
+                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                                nulla pariatur.</li>
+                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                                aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat
+                                nulla pariatur.</li>
+                        </ul>
+                    </p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mission section ends -->
+
+<br>
+<br>
+
+<!-- Categories section starts -->
+<div class="container">
+  <div class="container">
+    <h3 id="headings_main" align="center" style="font-family: 'Combo', cursive;">Search products according to <span style="color: blue;">their Categories</span></h3>
+  </div>
+  <br>
+  
+  <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+          {% for i in catg %}
+          <div class="col">
+              <div class="card shadow-sm">
+                  <div ><img class="card-img-top" src="{{ i.img.url }}" style="height:15rem;" alt="Card image cap"></div>
+                  <div class="card-body">
+                  <h5 align="center" class="card-title">{{ i.title }}</h5>
+                  <p class="card-text">{{ i.desc }}</p>
+                  </div>
+              </div>
+          </div>
+          {% endfor %}
+      </div>
+  </div>
+
+</div>
+<!-- Categories section ends -->
+
+</div>
+{% endblock body %}

@@ -67,9 +67,31 @@
 
 <br>
 <div class="container">
-<h3 id="headings_main" align="center">Search All <span style="color: blue;">The Products</span></h3>
+<h3 id="headings_main" align="center">Original Uploaded <span style="color: blue;">Images</span></h3>
 </div>
 <br>
+
+<!-- Original Uploaded Product Cards Starts -->
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 g-3">
+    <p style="font-weight: 600;">These are the original custom pictures uploaded by user including pictures from anywhere around the net and also extended to snipping real pictures from camera! It also works for any number of uploaded products.</p>
+</div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for j in mk1 %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div><img class="card-img-top" src="{{j.img.url}}" style="height:15rem;" alt="Card image cap"></div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<!-- Original Uploaded Product Cards Ends -->
+
+<br>
+<div class="container">
+<h3 id="headings_main" align="center">Recomended <span style="color: blue;">Products</span></h3>
+</div>
+<br>
+
 
 <!-- categories cards starts -->
 <div class="container">
@@ -102,14 +124,30 @@
         </div>
         {% endfor %}
 
+        {% for i in catg2 %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div ><img class="card-img-top" src="{{ i.img.url }}" style="height:15rem;" alt="Card image cap"></div>
+                <div class="card-body">
+                <h5 align="center" class="card-title">{{ i.title }}</h5>
+                <p class="card-text">
+                    {{ i.desc }}
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatum minus officia veritatis quos rerum eos iste reprehenderit id! Saepe.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
 
 
 
     </div>
 </div>
+<!-- <div class="container">
 {% for i in mk %}
-{{ i.img }}
+{{ i }}
 {% endfor %}
+</div> -->
 
 <!-- categories cards ends -->
 

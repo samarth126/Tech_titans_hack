@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}All Products{% endblock title %}
+{% block style %}
+<style>
+    h3#headings_main {
+        color: #333;
+        text-align: center;
+        position: relative;
+        margin: 1% 0% 5%;
+    }
+    h3#headings_main::after {
+        content: "";
+        width: 20rem;
+        position: absolute;
+        margin: 0% auto;
+        height: 9%;
+        background: #ffdc12;
+        left: 0%;
+        right: 0%;
+        bottom: -28%;
+    }
+        h3#headings {
+        color: #333;
+        text-align: center;
+        position: relative;
+        margin: 1% 0% 5%;
+    }
+    h3#headings::after {
+        content: "";
+        width: 10rem;
+        position: absolute;
+        margin: 0% auto;
+        height: 9%;
+        background: #ffdc12;
+        left: 0%;
+        right: 0%;
+        bottom: -20%;
+    }
+        h3#testi {
+        color: #333;
+        text-align: center;
+        position: relative;
+        margin: 1% 0% 5%;
+    }
+    h3#testi::after {
+        content: "";
+        width: 5rem;
+        position: absolute;
+        margin: 0% auto;
+        height: 9%;
+        background: #ffdc12;
+        left: 0%;
+        right: 0%;
+        bottom: -20%;
+    }
+</style>
+{% endblock style %}
+
+{% block body %}
+<br>
+<div class="container">
+    <h3 id="headings" align="center" style="font-family: 'Combo', cursive;">Get Variety <span style="color: blue;">of Products</span></h3>
+</div>
+
+<br>
+
+<!-- categories cards starts -->
+<div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 g-3">
+        {% for i in apd %}
+        <div class="col">
+            <div class="card shadow-sm">
+                <div ><img class="card-img-top" src="{{ i.img.url }}" style="height:15rem;" alt="Card image cap"></div>
+                <div class="card-body">
+                <h5 align="center" class="card-title">{{ i.title }}</h5>
+                <p class="card-text">
+                    {{ i.desc }}
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam voluptatum minus officia veritatis quos rerum eos iste reprehenderit id! Saepe.</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- categories cards ends -->
+
+{% endblock body %}

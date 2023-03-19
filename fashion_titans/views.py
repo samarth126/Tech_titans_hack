@@ -38,7 +38,8 @@ def cloth_classifier(request):
     return render(request, 'home.html', context)
 
 def categories(request):
-    label_names = ['T-shirt/top','Trouser','Pullover','Dress','Coat','Sandal','Shirt','Shoes','Bag','Ankle boot']
+    mk1 = recmd.objects.all()
+    label_names = ['Tshirt','Trouser','Pullover','Skirt','Coat','Sandal','Shirt','Shoes','Bag','Ankle boot']
     # pth="./media"
     pth=""
     ls=[]
@@ -52,10 +53,11 @@ def categories(request):
     # print(x)
     # for i in range(len(ls)):
     catg = Category.objects.filter(category=ls[0])
+    # catg1 = []
     catg1 = Category.objects.filter(category=ls[1])
-    context = {'catg':catg, 'mk':mk, 'catg1':catg1}    
+    # catg2 = Category.objects.filter(category=ls[2])
+    context = {'catg':catg,'catg1':catg1, 'mk':mk, 'mk1':mk1}    
     return render(request, 'categories.html', context)
-
 
 
 
@@ -72,3 +74,7 @@ def search(request):
     return render(request, 'search.html', context)
 
 
+def allproducts(request):
+    apd = Category.objects.all()
+    context = {'apd':apd}
+    return render(request, 'allproducts.html', context)

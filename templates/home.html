@@ -203,17 +203,17 @@ h3#testi::after {
 <br>
 
 <!-- Upload Section Starts -->
-<div class="row" style="padding: 2% 2%; background-color: rgb(251, 251, 251);">
-    <div class="row row-cols-md-2 row-cols-1 text-center justify-content-center px-xl-6 aos-init aos-animate" data-aos="fade-up">
-        <div class="col my-3" style="padding-right: 4%;">
+<div class="row" style="padding: 2% 0%; background-color: rgb(251, 251, 251);">
+    <div class="row row-cols-md-1 row-cols-1 text-center justify-content-center px-xl-6 aos-init aos-animate" data-aos="fade-up">
+        <div class="col my-3">
             <div class="card border-hover-primary hover-scale" style="border: 0;">
                 <div class="card-body">
                     <div class="text-primary mb-5">
                         <p class="fst-italic"><h3 id="headings" style="font-family: 'Combo', cursive;">Upload Your <span style="color: blue;">Custom Picture</span></h3> <br>
                             <form method = "post" enctype="multipart/form-data" action="{% url 'cloth_classifier/' %}">
                                 {% csrf_token %}
-                                <div style="display: flex; flex-direction: row;">
-                                    <input class="form-control me-2" style="height: 2.6rem; width: 15rem;" type="file" placeholder="Search With Image" aria-label="Search With Image" name="upload" id="upload">
+                                <div style="display: flex; flex-direction: row; text-align: center;">
+                                    <input class="form-control me-2" style="height: 2.6rem; width: 35rem;" type="file" placeholder="Search With Image" aria-label="Search With Image" name="upload" id="upload">
                                     <button class="btn btn-success" style="height: 2.6rem; width: 10rem;"  type="submit"><i class="fa fa-fw fa-search"></i>Upload</button>
                                 </div>
                             </form>
@@ -222,18 +222,6 @@ h3#testi::after {
                     <h6 class="font-weight-bold mb-3">Upload image of your requirements and get personalized experienced with our tool!</h6>
                 </div>
             </div> 
-        </div>
-        <div class="col my-3" style="padding-right: 4%;">
-            <div class="card border-hover-primary hover-scale" style="border: 0;">
-                <div class="card-body">
-                    <div class="text-primary mb-5">
-                        <p class="fst-italic"><h3 id="headings" style="font-family: 'Combo', cursive;">Our Predicted <span style="color: blue;">Image</span></h3>
-                            <br>
-                        </p> 
-                    </div>
-                    <h6 class="font-weight-bold mb-3">Dummy Text</h6>
-                </div>
-            </div>
         </div>
     </div>
 </div>

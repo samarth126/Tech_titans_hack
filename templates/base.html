@@ -35,7 +35,7 @@
         padding: 0.7rem 0rem;
     }
     .navside {
-        padding: 0.3rem 6rem 0.3rem 6rem;
+        padding: 0.3rem 1rem 0.3rem 1rem;
         text-decoration: none;
         /* font-size: 1.5rem; */
         color: yellowgreen;
@@ -66,20 +66,25 @@
             <i class="fa fa-bars"></i>
           </button>
           <div class="collapse navbar-collapse"  id="navbarScroll">
-            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll row row-cols-md-3 row-cols-1 text-center justify-content-center px-xl-6 aos-init aos-animate" style="--bs-scroll-height: 100px;">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll row row-cols-md-4 row-cols-1 text-center justify-content-center px-xl-6 aos-init aos-animate" style="--bs-scroll-height: 100px;">
               <li class="navside">
                 <a class="nav-link" aria-current="page" href="{% url 'home' %}"><i class="fa fa-fw fa-home"></i>Home</a>
               </li>
               <li class="navside">
-                <a class="nav-link" aria-current="page" href="{% url 'categories' %}"><i class="fa fa-product-hunt"></i>Products</a>
+                <a class="nav-link" aria-current="page" href="{% url 'allproducts' %}"><i class="fa fa-product-hunt"></i>Products</a>
               </li>
               <li class="navside">
-                <form method="get" action="/search" class="d-flex" role="search" style="justify-content: center;">
+                <a class="nav-link" aria-current="page" style="display: flex;" href="{% url 'categories' %}"><i class="fa fa-handshake-o"></i>Recommendations</a>
+              </li>
+              <li class="navside">
+                <a class="nav-link" aria-current="page">
+                <form method="get" action="/search" class="d-flex" role="search" style="justify-content: left;">
                     <div style="display: flex; flex-direction: row;">
-                        <input class="form-control me-2" style="height: 2.6rem; width: 15rem;" type="search" placeholder="Search Products" aria-label="Search" name="query" id="query">
+                        <input class="form-control me-2" style="height: 2.6rem; width: 10rem;" type="search" placeholder="Search Products" aria-label="Search" name="query" id="query">
                         <button class="btn btn-success" style="height: 2.6rem; width: 10rem;"  type="submit"><i class="fa fa-fw fa-search"></i>Search</button>
                     </div>
                 </form>
+                </a>
               </li>
             </ul>
           </div>

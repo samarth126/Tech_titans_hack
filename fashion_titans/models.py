@@ -12,7 +12,14 @@ class recmd(models.Model):
     predection=models.CharField(max_length=50 ,default="foobar")
     img = models.ImageField(upload_to='images/')
     def __str__(self):
-        return self.predection  
+        return self.predection 
+
+class recmd1(models.Model):
+    pattern=models.CharField(max_length=50,default="pattern" )
+    predection=models.CharField(max_length=50 ,default="pattern")
+    img = models.ImageField(upload_to='images/')
+    def __str__(self):
+        return self.predection 
 
 class Category(models.Model):
     title = models.CharField(max_length=100)

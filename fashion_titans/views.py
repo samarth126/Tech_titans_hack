@@ -6,7 +6,7 @@ from django.shortcuts import get_object_or_404, render
 from .models import *
 from django.db.models import Q
 from django.contrib import messages
-from ML_models import main1
+from ML_models import main1,main
 
 
 # Create your views here.
@@ -51,11 +51,33 @@ def categories(request):
          ls.append(main1.predimage(pth,label_names))
     print(ls)
     # print(x)
-    # for i in range(len(ls)):
     catg = Category.objects.filter(category=ls[0])
     # catg1 = []
     catg1 = Category.objects.filter(category=ls[1])
     # catg2 = Category.objects.filter(category=ls[2])
+    context = {'catg':catg,'catg1':catg1, 'mk':mk, 'mk1':mk1}    
+    return render(request, 'categories.html', context)
+
+
+
+
+
+def categories1(request):
+    mk1 = recmd1.objects.all()
+    l=[ 'OTHER', 'animal', 'cartoon', 'chevron','floral', 'geometry', 'houndstooth', 'ikat', 'letter_numb', 'plain', 'polka dot', 'scales', 'skull', 'squares','stars','stripes','tribal']
+    # pth="./media"
+    pth=""
+    ls=[]
+    mk = recmd1.objects.values_list('img')
+    for i in mk :
+         print(i[0])
+         pth= "./media/" + i[0]
+         print(pth)
+         ls.append(main.pattern(pth,l))
+    print(ls)
+    # print(x)
+    catg1 = []
+    catg = Category.objects.filter(desc=ls[0])
     context = {'catg':catg,'catg1':catg1, 'mk':mk, 'mk1':mk1}    
     return render(request, 'categories.html', context)
 

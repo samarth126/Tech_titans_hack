@@ -5,3 +5,4 @@ from fashion_titans.models import *
 
 admin.site.register(Category),
 admin.site.register(recmd),
+admin.site.register(recmd1),
